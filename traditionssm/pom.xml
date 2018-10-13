@@ -67,6 +67,7 @@
       <artifactId>pagehelper</artifactId>
       <version>3.7.5</version>
     </dependency>
+
     <dependency>
       <groupId>com.github.jsqlparser</groupId>
       <artifactId>jsqlparser</artifactId>
@@ -90,15 +91,12 @@
       <version>5.1.26</version>
     </dependency>
 
-
-
     <!-- https://mvnrepository.com/artifact/org.slf4j/slf4j-log4j12 -->
     <dependency>
       <groupId>org.slf4j</groupId>
       <artifactId>slf4j-log4j12</artifactId>
       <version>1.7.25</version>
     </dependency>
-
 
     <!-- Jackson Json处理工具包 -->
     <!-- https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-databind -->

@@ -17,11 +17,11 @@
 		<property name="configLocation" value="classpath:mybatis-config.xml"></property>
 		<!-- mapper.xml的加载 -->
 		<property name="mapperLocations" value="classpath:mapper/*.xml"></property>
-		<property name="typeAliasesPackage" value="com.cjx.traditionssm.web.model"></property>
+		<property name="typeAliasesPackage" value="com.cjx.annotationsssm.web.model"></property>
 	</bean>
 	<!-- 配置mapper接口扫描包 -->
 	<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
 		<!-- 如果需要多个路径可以使用逗号进行分离 -->
-		<property name="basePackage" value="com.cjx.traditionssm.web.dao" />
+		<property name="basePackage" value="com.cjx.annotationsssm.web.dao" />
 	</bean>
 </beans>

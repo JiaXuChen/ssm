@@ -3,7 +3,7 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <!-- namespace :名称空间，唯一标识，不需要特别的起名称，只要保证所有的mapper中的名称空间，唯一即可 -->
-<mapper namespace="com.cjx.traditionssm.web.dao.StoreInfoMapper">
+<mapper namespace="com.cjx.annotationsssm.web.dao.StoreInfoMapper">
         <resultMap id="storeInfo" type="StoreInfoModel">
             <id property="storeId" column="ylxd_storeId"/>
             <result property="storeName" column="ylxd_storeName"/>
@@ -29,5 +29,24 @@
                 ylxd_store.ylxd_ownerId = ylxd_user.id
         </select>
 
+        <insert id="addStore" parameterType="StoreInfoModel">
+            INSERT INTO ylxd.ylxd_store (
+                ylxd_storeId,
+                ylxd_storeName,
+                ylxd_ownerId,
+                ylxd_ownerName,
+                ylxd_createTime,
+                ylxd_protocolId
+            )
+            VALUES
+                (
+                    null,
+                    ${storeName},
+                    ${ownerId},
+                    ${ownerName},
+                    SYSDATE(),
+                    ${protocolId}
+                );
 
+        </insert>
 </mapper>
