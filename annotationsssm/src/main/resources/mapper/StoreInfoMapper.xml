@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- namespace :名称空间，唯一标识，不需要特别的起名称，只要保证所有的mapper中的名称空间，唯一即可 -->
+<mapper namespace="com.cjx.traditionssm.web.dao.StoreInfoMapper">
+        <resultMap id="storeInfo" type="StoreInfoModel">
+            <id property="storeId" column="ylxd_storeId"/>
+            <result property="storeName" column="ylxd_storeName"/>
+            <result property="ownerId" column="ylxd_ownerId"/>
+            <result property="ownerName" column="ylxd_ownerName"/>
+            <result property="createTime" column="ylxd_createTime"/>
+            <result property="protocolId" column="ylxd_protocolId"/>
+            <!--开启自动映射autoMapping-->
+            <association property="userModel" javaType="UserModel" autoMapping="true">
+                <id property="id" column="id"/>
+                <result property="ownerName" column="userName"/>
+                <result property="userName" column="userName"/>
+            </association>
+        </resultMap>
+
+        <select id="getAllStore" resultMap="storeInfo">
+            SELECT
+                *
+            FROM
+                ylxd_store,
+                ylxd_user
+            WHERE
+                ylxd_store.ylxd_ownerId = ylxd_user.id
+        </select>
+
+
+</mapper>

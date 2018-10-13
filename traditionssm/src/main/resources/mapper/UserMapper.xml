@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- namespace :名称空间，唯一标识，不需要特别的起名称，只要保证所有的mapper中的名称空间，唯一即可 -->
+<mapper namespace="com.cjx.traditionssm.web.dao.UserMapper">
+        <resultMap id="userInfo" type="UserModel">
+            <id property="id" column="id"/>
+            <result property="ownerName" column="userName"/>
+            <result property="userName" column="userName"/>
+        </resultMap>
+
+        <select id="getAllUserInfo" resultMap="userInfo">
+           SELECT
+                *
+            FROM
+                ylxd_user
+        </select>
+
+        <select id="getUserInfoById">
+           SELECT
+                *
+            FROM
+                ylxd_user
+            WHERE
+                ylxd_user.id=#{userId}
+        </select>
+
+</mapper>
