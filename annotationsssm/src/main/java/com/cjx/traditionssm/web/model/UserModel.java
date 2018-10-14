@@ -2,7 +2,7 @@ package com.cjx.traditionssm.web.model;
 
 import java.util.Date;
 
-public class UserModel {
+public class UserModel  implements java.io.Serializable {
 
     private int id;
     private  String userName;
